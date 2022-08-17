@@ -1,0 +1,18 @@
+---
+version: "2.1"
+services:
+  fossil:
+    image: mpcjanssen/fossil:latest
+    environment:
+      - TZ=Europe/Amsterdan
+    volumes:
+      - repos:/repos
+    restart: unless-stopped
+    
+volumes:
+   repos:
+   
+networks:
+  default:
+    external: true
+    name: services
